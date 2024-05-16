@@ -203,6 +203,7 @@ return { -- LSP Configuration & Plugins
             "stylua", -- Used to format lua code
             "shfmt",
             "lua_ls",
+            "taplo",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

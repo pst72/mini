@@ -1,0 +1,23 @@
+return
+{
+    '2kabhishek/tdo.nvim',
+    dependencies = 'nvim-telescope/telescope.nvim',
+    cmd = { 'Tdo', 'TdoEntry', 'TdoNote', 'TdoTodos', 'TdoToggle', 'TdoFind', 'TdoFiles' },
+    keys = { '[t', ']t' },
+    vim.keymap.set('n', '<localleader>nd', '<cmd>Tdo<cr>', { desc = 'Todays Todo ' }),
+    vim.keymap.set('n', '<localleader>ne', '<cmd>TdoEntry<cr>', { desc = 'Todays Entry' }),
+    vim.keymap.set('n', '<localleader>nf', '<cmd>TdoFiles<cr>', { desc = 'All Notes' }),
+    vim.keymap.set('n', '<localleader>ng', '<cmd>TdoFind<cr>', { desc = 'Find Notes' }),
+    vim.keymap.set('n', '<localleader>nh', '<cmd>Tdo -1<cr>', { desc = "Yesterday's Todo" }),
+    vim.keymap.set('n', '<localleader>nj', "<cmd>put =strftime('%a %d %b %r')<cr>", { desc = 'Insert Human Date' }),
+    vim.keymap.set('n', '<localleader>nJ', "<cmd>put =strftime('%F')<cr>", { desc = 'Insert Date' }),
+    vim.keymap.set('n', '<localleader>nk', "<cmd>put =strftime('%r')<cr>", { desc = 'Insert Human Time' }),
+    vim.keymap.set('n', '<localleader>nK', "<cmd>put =strftime('%F-%H-%M')<cr>", { desc = 'Insert Time' }),
+    vim.keymap.set('n', '<localleader>nl', '<cmd>Tdo 1<cr>', { desc = "Tomorrow's Todo" }),
+    vim.keymap.set('n', '<localleader>nn', '<cmd>TdoNote<cr>', { desc = 'New Note' }),
+    vim.keymap.set('n', '<localleader>ns',
+        '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Commited!")<cr>',
+        { desc = 'Commit Note', }),
+    vim.keymap.set('n', '\\x', '<cmd>TdoToggle<cr>', { desc = 'Toggle Todo' }),
+    vim.keymap.set('n', '<localleader>nt', '<cmd>TdoTodos<cr>', { desc = 'Incomplete Todos' }),
+}

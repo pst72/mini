@@ -107,6 +107,7 @@ return { -- Autocompletion
                 { name = 'luasnip' },
                 { name = 'nvim_lua' },
                 { name = 'nvim_lsp_signature_help' },
+                { name = 'codeium' },
                 { name = 'path' },
             },
             sorting = {
