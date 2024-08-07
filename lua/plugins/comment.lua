@@ -26,5 +26,5 @@ return {
 			extra = true,
 		},
 	},
-	enabled = true,
+	enabled = false,
 }
