@@ -54,7 +54,7 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}" -- always show the sign column, otherwise it would shift the text each time
 vim.opt.colorcolumn = "80" -- always show the 80th column
 vim.opt.wrap = true -- display lines as one long line
-vim.opt.scrolloff = 8 -- is one of my fav
+vim.opt.scrolloff = 16 -- was 8, is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("csI")

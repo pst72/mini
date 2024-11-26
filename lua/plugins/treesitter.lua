@@ -210,7 +210,7 @@ return {
 				},
 			})
 
-			require("nvim-ts-autotag").setup()
+			require("nvim-ts-autotag").setup({ opts = {} })
 		end, 0)
 	end,
 }

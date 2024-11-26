@@ -1,7 +1,7 @@
 return {
 	vim.keymap.set(
 		{ "v", "n", "s" },
-		"sw",
+		"<leader>sw",
 		'<cmd>Telescope grep_string pattern="<cword>"<cr>',
 		{ desc = "Grep Word/s Under Cursor" }
 	),
@@ -21,6 +21,15 @@ return {
 	vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { desc = "Move Selection Up 1 line" }),
 	vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Selection Down 1 line" }),
 	vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Selection Up 1 line" }),
+	-- make current file executable
+	vim.keymap.set("n", "cx", "<cmd>!chmod +x %<CR>", { desc = "Make current file executable" }),
+
+	-- Keywordprg
+	vim.keymap.set("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" }),
+
+	-- Commenting
+	vim.keymap.set("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" }),
+	vim.keymap.set("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" }),
 
 	-- Better window navigation
 	vim.keymap.set("n", "<C-h>", "<C-w>h"),
@@ -101,39 +110,39 @@ return {
 		require("treesitter-context").go_to_context(vim.v.count1)
 	end, { desc = "Jump to Top of Context" }),
 
-	vim.keymap.set("n", "<Leader>p", function()
-		vim.ui.select({
-			"buf_lines",
-			"buffers",
-			"cli",
-			"commands",
-			"diagnostic",
-			"explorer",
-			"files",
-			"git_branches",
-			"git_commits",
-			"git_files",
-			"hit_hunks",
-			"grep",
-			"grep_live",
-			"help",
-			"hipatterns",
-			"history",
-			"hl_groups",
-			"keymaps",
-			"list",
-			"lsp",
-			"marks",
-			"oldfiles",
-			"options",
-			"registers",
-			"resume",
-			"spellsuggest",
-			"treesitter",
-		}, { prompt = "Pick " }, function(choice)
-			return vim.cmd({ cmd = "Pick", args = { choice } })
-		end)
-	end, { desc = "[Mini.pick] PickTelescope ..." }),
+	-- vim.keymap.set("n", "<Leader>p", function()
+	-- 	vim.ui.select({
+	-- 		"buf_lines",
+	-- 		"buffers",
+	-- 		"cli",
+	-- 		"commands",
+	-- 		"diagnostic",
+	-- 		"explorer",
+	-- 		"files",
+	-- 		"git_branches",
+	-- 		"git_commits",
+	-- 		"git_files",
+	-- 		"hit_hunks",
+	-- 		"grep",
+	-- 		"grep_live",
+	-- 		"help",
+	-- 		"hipatterns",
+	-- 		"history",
+	-- 		"hl_groups",
+	-- 		"keymaps",
+	-- 		"list",
+	-- 		"lsp",
+	-- 		"marks",
+	-- 		"oldfiles",
+	-- 		"options",
+	-- 		"registers",
+	-- 		"resume",
+	-- 		"spellsuggest",
+	-- 		"treesitter",
+	-- 	}, { prompt = "Pick " }, function(choice)
+	-- 		return vim.cmd({ cmd = "Pick", args = { choice } })
+	-- 	end)
+	-- end, { desc = "[Mini.pick] PickTelescope ..." }),
 
 	-- navigation
 	vim.keymap.set("n", "]h", function()
