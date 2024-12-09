@@ -146,11 +146,12 @@ return {
 
 	-- navigation
 	vim.keymap.set("n", "]h", function()
-		require("gitsigns").next_hunk()
+		require("gitsigns").nav_hunk("next")
 		vim.api.nvim_feedkeys("zz", "n", false)
 	end, { desc = "Next hunk" }),
+
 	vim.keymap.set("n", "[h", function()
-		require("gitsigns").prev_hunk()
+		require("gitsigns").nav_hunk("prev")
 		vim.api.nvim_feedkeys("zz", "n", false)
 	end, { desc = "Previous hunk" }),
 
@@ -217,7 +218,6 @@ return {
 	vim.keymap.set("n", "<leader>di", "<cmd>InspectTree<cr>", { desc = "Inspect" }),
 	vim.keymap.set("n", "<leader>dc", "<cmd>ColorizerToggle<cr>", { desc = "Colorizer" }),
 	vim.keymap.set("n", "<leader>dn", "<cmd>TSNodeUnderCursor<cr>zvzz", { desc = "Node Under Cursor" }),
-	vim.keymap.set("n", "<leader>dp", "<cmd>TSPlaygroundToggle<cr>", { desc = "Playground" }),
 	vim.keymap.set("n", "]f", "<cmd>TSTextobjectGotoNextStart @function.outer<cr>zz", { desc = "Next Function" }),
 	vim.keymap.set("n", "[f", "<cmd>TSTextobjectGotoPrevStart @function.outer<cr>zz", { desc = "Next Function" }),
 

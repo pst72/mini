@@ -9,9 +9,7 @@ return {
 		"HiPhish/rainbow-delimiters.nvim",
 		"RRethy/nvim-treesitter-endwise",
 		"tadmccorkle/markdown.nvim",
-		-- 'mfussenegger/nvim-ts-hint-textobject',
 		"windwp/nvim-ts-autotag",
-		"nvim-treesitter/playground",
 	},
 	config = function()
 		vim.defer_fn(function()
@@ -158,29 +156,6 @@ return {
 					separator = nil,
 					zindex = 20, -- The Z-index of the context window
 					on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-				},
-				playground = {
-					enable = true,
-					disable = {},
-					updatetime = 25,
-					persist_queries = false,
-					keybindings = {
-						toggle_query_editor = "o",
-						toggle_hl_groups = "i",
-						toggle_injected_languages = "t",
-						toggle_anonymous_nodes = "a",
-						toggle_language_display = "I",
-						focus_language = "f",
-						unfocus_language = "F",
-						update = "R",
-						goto_node = "<CR>",
-						show_help = "?",
-					},
-					query_linter = {
-						enable = true,
-						use_virtual_text = true,
-						lint_events = { "BufWrite", "CursorHold" },
-					},
 				},
 				refactor = {
 					highlight_definitions = {

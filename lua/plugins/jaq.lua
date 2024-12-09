@@ -90,7 +90,9 @@ return {
 	vim.keymap.set("n", "<leader>jj", "<cmd>Jaq<cr>", { desc = "Run Code in Float" }),
 	vim.keymap.set("n", "<F10>", "<cmd>Jaq<cr>", { desc = "Run Code in Float" }),
 	vim.keymap.set("n", "<leader>jh", "<cmd>Jaq terminal<cr>", { desc = "Run Code in Terminal" }),
-	vim.keymap.set("n", "<leader>js", "<cmd>Jaq internal<cr>", { desc = "Source Internal Code " }),
+	vim.keymap.set("n", "<leader>ji", "<cmd>Jaq internal<cr>", { desc = "Source Internal Code " }),
+	vim.keymap.set("n", "<leader>js", ":.lua<cr>", { desc = "Source Visual Code " }),
+	vim.keymap.set("v", "<leader>js", ":lua<cr>", { desc = "Source Visual Code " }),
 	vim.keymap.set("n", "<leader>jq", "<cmd>Jaq quickfix<cr>", { desc = "Run Code in QuickFix" }),
 	vim.keymap.set("n", "<leader>jb", "<cmd>Jaq bang<cr>", { desc = "Run Code in StatusLine" }),
 }
